@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
 
 import "./App.css";
 import Stripe from "./pages/Stripe";
@@ -25,19 +24,15 @@ function App() {
     setShowPopUp(true);
   };
 
-  console.log(formValues);
-
-  // const stripePromise = loadStripe('pk_test_6pRNASd4XMUh');
-
   return (
     <>
       <div>
         <form onSubmit={handleSubmit}>
           <div>
             {" "}
-            <label>Enter Currency</label>
+            <label>Enter Amount</label>
             <input
-              type="text"
+              type="number"
               name="amount"
               value={formValues.amount}
               onChange={handleChange}
@@ -45,9 +40,9 @@ function App() {
           </div>
           <div>
             {" "}
-            <label>Enter Amount</label>
+            <label>Enter Currency</label>
             <input
-              type="number"
+              type="text"
               name="currency"
               value={formValues.currency}
               onChange={handleChange}
