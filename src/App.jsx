@@ -54,13 +54,7 @@ function App() {
         </form>
       </div>
 
-      {showPopUp && (
-        <Stripe
-          formValues={formValues}
-          setShowPopUp={setShowPopUp}
-          showPopUp={showPopUp}
-        />
-      )}
+      {showPopUp && <Stripe formValues={formValues} />}
     </>
   );
 }
